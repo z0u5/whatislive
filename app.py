@@ -19,7 +19,7 @@ def homepage():
         </h1>
         <p>-------------------------------------------------------------</p>
     </center>
-    <h4>Hi, I use this site for my RAT or Backdoor</h4>
+
 
 </body>
 </html>
