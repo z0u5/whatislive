@@ -21,7 +21,7 @@ def homepage():
 
 </body>
 </html>
-    """.format(time=the_time)
+    """
 
 if __name__ == '__main__':
-    app.run(debug=True, use_reloader=True)
+    app.run(port = 5000)
