@@ -1,29 +1,10 @@
-from flask import Flask
-from datetime import datetime
-app = Flask(__name__)
+import socket
 
-@app.route('/')
-def homepage():
-    the_time = datetime.now().strftime("%A, %d %b %Y %l:%M %p")
-    return """
-<!DOCTYPE html>
-<html>
-<head>
-    <title>My Page</title>
-</head>
-<body>
-<div>
-    <center>
-        <h1>
-            Hello you are  in the HELL
-        </h1>
-        <p>-------------------------------------------------------------</p>
-    </center>
+host = socket.gethostbyname(socket.gethostname())
 
-
-</body>
-</html>
-    """.format(time=the_time)
-
-if __name__ == '__main__':
-    app.run(port = 8080)
+s = socket.socket()
+s.bind((host,5000))
+s.listen(10)
+con, addr = s.accept()
+con.send("666 is good")
+s.close()
